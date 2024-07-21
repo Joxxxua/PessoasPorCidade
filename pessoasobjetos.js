@@ -1,7 +1,7 @@
 const pessoas = [
     {
         nome: "Ana",
-        idade: 25,
+        idade: 17,
         cidade: "São Paulo"
     },
     {
@@ -24,12 +24,13 @@ const pessoas = [
         idade: 32,
         cidade: "Porto Alegre"
     }
-];
+];  
 function mostrarListaPessoas(pessoas){
     pessoas.forEach(pessoa => {
         console.log(`${pessoa.nome}`);
         console.log(`${pessoa.idade}`);
         console.log(`${pessoa.cidade}`);
+        console.log('-------------------------');
     });
 }
 pessoas.push({
@@ -44,4 +45,8 @@ function filtrarPorCidade(pessoas, cidade) {
 }
 const pessoasDeSaoPaulo = filtrarPorCidade(pessoas,"São Paulo");
 mostrarListaPessoas(pessoasDeSaoPaulo);
-// 
+function filtrarIdade(pessoas,idade){
+    return pessoas.filter(pessoa => pessoa.idade >= idade)
+}
+const pessoasMaioresDe18 = filtrarIdade(pessoas,18);
+mostrarListaPessoas(pessoasMaioresDe18);
